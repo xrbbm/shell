@@ -9,6 +9,7 @@ $3是IPv4的地址,按住我的配置可以由脚本获取ip.<br>
  
  
 配置放在前面fi的后面,从这下一行开始才是配置:<br>
+<code>
 #天翼认证 -p [学校分配的ip} -d [登录网站的帐号不用域名] -k [密码] <br>
 logger -t "【天翼认证】" "脚本开始执行" <br>
 if [ `top -n 1 -b | grep -c renzhen.sh` -le 1 ] <br>
@@ -18,3 +19,4 @@ logger -t "【天翼认证】" "脚本挂入后台" <br>
 else <br>
 logger -t "【天翼认证】" "脚本已运行!" <br>
 fi <br>
+</code>
