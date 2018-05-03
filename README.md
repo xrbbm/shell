@@ -9,14 +9,14 @@ $3是IPv4的地址,按住我的配置可以由脚本获取ip.<br>
  
 <pre>
 <code>
-#天翼认证 -p [学校分配的ip} -d [登录网站的帐号不用域名] -k [密码] <br>
-logger -t "【天翼认证】" "脚本开始执行" <br>
-if [ `top -n 1 -b | grep -c renzhen.sh` -le 1 ] <br>
-then <br>
-/etc/storage/certification/renzhen.sh -p $3 -d [登录网站的帐号] -k [密码] & <br>
-logger -t "【天翼认证】" "脚本挂入后台" <br>
-else <br>
-logger -t "【天翼认证】" "脚本已运行!" <br>
+#天翼认证 -p [学校分配的ip} -d [登录网站的帐号不用域名] -k [密码] 
+logger -t "【天翼认证】" "脚本开始执行" 
+if [ `top -n 1 -b | grep -c renzhen.sh` -le 1 ] 
+then 
+/etc/storage/certification/renzhen.sh -p $3 -d [登录网站的帐号] -k [密码] & 
+logger -t "【天翼认证】" "脚本挂入后台" 
+else
+logger -t "【天翼认证】" "脚本已运行!" 
 fi <br>
 </code>
 </pre>
@@ -28,9 +28,9 @@ fi <br>
 <pre>
 <code>
 logger -t "【天翼认证】" "脚本开始执行" 
-id=15322310981   
+id=xx
 #xx是宽带帐号不要带域名
-key=12025434   
+key=xx
 #xx是密码,8位的
 ip=$3
 state=true
