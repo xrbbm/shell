@@ -27,18 +27,29 @@ fi <br>
 复制下面的代码块到设置里面保存就好<br>
 <pre>
 <code>
-id=XX   #xx是宽带帐号不要带域名
-key=XX   #xx是密码,8位的
-funRenzhen(){      #天翼认证
-curl -d "wlanuserip=$3&wlanacname=hhzyxx&chal_id=&chal_vector=&auth_type=PAP&seq_id=&req_id=&wlanacIp=183.56.21.173&ssid=&vlan=&mac=&message=&bank_acct=&isCookies=&version=0&authkey=hhzyxx&url=&usertime=0&listpasscode=0&listgetpass=0&getpasstype=0&randstr=&domain=HHZYXX&isRadiusProxy=false&usertype=0&isHaveNotice=0&times=12&weizhi=0&smsid=0&freeuser=&freepasswd=&listwxauth=0&templatetype=1&tname=5&logintype=0&act=&is189=true&terminalType=&useridtemp=$id&userid=$id&passwd=$key" http://219.136.125.139/portalAuthAction.do
+logger -t "【天翼认证】" "脚本开始执行" 
+id=15322310981   
+#xx是宽带帐号不要带域名
+key=12025434   
+#xx是密码,8位的
+ip=$3
+state=true
+funRenzhen(){
+curl -d "wlanuserip=$ip&wlanacname=hhzyxx&chal_id=&chal_vector=&auth_type=PAP&seq_id=&req_id=&wlanacIp=183.56.21.173&ssid=&vlan=&mac=&message=&bank_acct=&isCookies=&version=0&authkey=hhzyxx&url=&usertime=0&listpasscode=0&listgetpass=0&getpasstype=0&randstr=&domain=HHZYXX&isRadiusProxy=false&usertype=0&isHaveNotice=0×=12&weizhi=0&smsid=0&freeuser=&freepasswd=&listwxauth=0&templatetype=1&tname=5&logintype=0&act=&is189=true&terminalType=&useridtemp=$id&userid=$id&passwd=$key" http://219.136.125.139/portalAuthAction.do
 }
-while (![ /bin/ping -c 1 114.114.114.114 >/dev/null ])
+#funRenzhen >/dev/null
+while($state)
 do
-logger -t "【天翼认证】" "脚本执行失败!15s后重新执行"
-funRenzhen >/dev/null
-sleep 15
-doen
+if /bin/ping -c 1 114.114.114.114 >/dev/null 2>&1
+then
+state=false
 logger -t "【天翼认证】" "脚本执行成功!"
+else
+funRenzhen >/dev/null
+logger -t "【天翼认证】" "脚本执行失败!10s后重新执行"
+sleep 10
+fi
+done
 </code>
 </pre>
 
