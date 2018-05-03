@@ -24,32 +24,5 @@ fi <br>
 <h2>自动认证脚本无后台版</h2>
 :注意:需要老毛子固件<br>
 路由器web管理设置:自定义设置-脚本-在WAN上行/下行启动后执行<br>
-复制下面的代码块到设置里面保存就好<br>
-<pre>
-<code>
-logger -t "【天翼认证】" "脚本开始执行" 
-id=xx
-#xx是宽带帐号不要带域名
-key=xx
-#xx是密码,8位的
-ip=$3
-state=true
-funRenzhen(){
-curl -d "wlanuserip=$ip&wlanacname=hhzyxx&chal_id=&chal_vector=&auth_type=PAP&seq_id=&req_id=&wlanacIp=183.56.21.173&ssid=&vlan=&mac=&message=&bank_acct=&isCookies=&version=0&authkey=hhzyxx&url=&usertime=0&listpasscode=0&listgetpass=0&getpasstype=0&randstr=&domain=HHZYXX&isRadiusProxy=false&usertype=0&isHaveNotice=0×=12&weizhi=0&smsid=0&freeuser=&freepasswd=&listwxauth=0&templatetype=1&tname=5&logintype=0&act=&is189=true&terminalType=&useridtemp=$id&userid=$id&passwd=$key" http://219.136.125.139/portalAuthAction.do
-}
-funRenzhen >/dev/null
-while($state)
-do
-if /bin/ping -c 1 114.114.114.114 >/dev/null 2>&1
-then
-state=false
-logger -t "【天翼认证】" "脚本执行成功!"
-else
-funRenzhen >/dev/null
-logger -t "【天翼认证】" "脚本执行失败!10s后重新执行"
-sleep 10
-fi
-done
-</code>
-</pre>
-</div>
+复制文本中的的代码块到设置里面保存就好,不用覆盖自带设置<br>
+
