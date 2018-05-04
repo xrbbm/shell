@@ -17,7 +17,7 @@ state=false
 logger -t "【天翼认证】" "脚本执行成功!"
 else
 funRenzhen >/dev/null
-logger -t "【天翼认证】" "脚本执行失败!10s后重新执行"
-sleep 10
+logger -t "【天翼认证】" "脚本执行失败!15s后重新执行"
+sleep 15
 fi
 done
