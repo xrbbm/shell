@@ -71,8 +71,8 @@ if /bin/ping -c 1 114.114.114.114 >/dev/null
 then
 echo 天翼认证成功!
 time
-echo 网络正常!休眠一小时后重新判断
-sleep 3600
+echo 网络正常!休眠10分钟后重新判断
+sleep 600
 else
 if_funRenzhen
 echo 网络连接错误!天翼认证失败!正在重连...15s间隔
