@@ -29,7 +29,7 @@ while true
 do
 funRenzhen(){
 #天翼认证
-curl -d "wlanuserip=$ip&wlanacname=hhzyxx&chal_id=&chal_vector=&auth_type=PAP&seq_id=&req_id=&wlanacIp=183.56.21.173&ssid=&vlan=&mac=&message=&bank_acct=&isCookies=&version=0&authkey=hhzyxx&url=&usertime=0&listpasscode=0&listgetpass=0&getpasstype=0&randstr=&domain=HHZYXX&isRadiusProxy=false&usertype=0&isHaveNotice=0&times=12&weizhi=0&smsid=0&freeuser=&freepasswd=&listwxauth=0&templatetype=1&tname=5&logintype=0&act=&is189=true&terminalType=&useridtemp=$id&userid=$id&passwd=$key" http://219.136.125.139/portalAuthAction.do
+curl -d "wlanuserip=$ip&wlanacname=hhzyxx-C&chal_id=&chal_vector=&auth_type=PAP&seq_id=&req_id=&wlanacIp=183.6.94.37&ssid=&vlan=&mac=&message=&bank_acct=&isCookies=&version=0&authkey=hhzyxx&url=&usertime=0&listpasscode=0&listgetpass=0&getpasstype=0&randstr=&domain=HHZYXX&isRadiusProxy=false&usertype=0&isHaveNotice=0&times=12&weizhi=0&smsid=0&freeuser=&freepasswd=&listwxauth=0&templatetype=1&tname=5&logintype=0&act=&is189=true&terminalType=&useridtemp=$id&userid=$id&passwd=$key" http://219.136.125.139/portalAuthAction.do
 }
 if_funRenzhen(){
 while (![ funRenzhen >/dev/null ]) #判断天翼数据库打开没
