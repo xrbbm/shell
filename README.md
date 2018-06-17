@@ -10,7 +10,7 @@
 <pre>
 <code>
 #天翼认证 -p [学校分配的ip} -d [登录网站的帐号不用域名] -k [密码] 
-/etc/storage/certification/renzhen.sh -p $3 -d [登录网站的帐号] -k [密码] & 
+/etc/storage/certification/renzhen.sh -d [登录网站的帐号] -k [密码] & 
  <br>
 </code>
 </pre>
